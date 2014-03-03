@@ -10,7 +10,6 @@ d3.tsv "bar_graph_data.tsv", (error, data) ->
 
   # hand off imported data to global var
   dataset = data
-  console.log dataset
   #functions that require successful load of data
   # generateVis()
   return
@@ -19,9 +18,7 @@ d3.select("body").selectAll("p")
   .data(dataset)
   .enter()
   .append("p")
-  .text(dataset) -> dataset
-
-console.log dataset
+  .text (d) -> d
 
 
   # .text (d) -> d
